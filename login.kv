@@ -1,0 +1,51 @@
+#On Pycharm’s main menu, click File-> Import settings
+#Select this file, then it will come with a dialog with filetypes ticked. Just click ok or whatever and then its there.
+#https://github.com/Zen-CODE/kivybits/blob/master/IDE/PyCharm_kv_completion.jar
+#https://www.jetbrains.com/help/pycharm/creating-and-registering-file-types.html
+
+#:include connected.kv
+
+<Login>:
+    BoxLayout
+        id: login_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+
+        Label:
+            text: 'Welcome'
+            font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Login'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: login
+                multiline:False
+                font_size: 28
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: password
+                multiline:False
+                password:True
+                font_size: 28
+
+        Button:
+            text: 'Log in'
+            font_size: 24
+
+            on_press: root.do_login(login.text, password.text)
