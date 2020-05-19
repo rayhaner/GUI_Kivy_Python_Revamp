@@ -3,49 +3,62 @@
 #https://github.com/Zen-CODE/kivybits/blob/master/IDE/PyCharm_kv_completion.jar
 #https://www.jetbrains.com/help/pycharm/creating-and-registering-file-types.html
 
-#:include connected.kv
+#:include incorrect.kv
 
 <Login>:
     BoxLayout
         id: login_layout
         orientation: 'vertical'
-        padding: [10,50,10,50]
-        spacing: 50
 
         Label:
             text: 'Welcome'
-            font_size: 32
+            text_size: self.size
+            halign: 'center'
+            font_size: 80
+            size_hint_y: None
+            height: '100dp'
 
         BoxLayout:
             orientation: 'vertical'
+            padding: 300, 50
 
             Label:
-                text: 'Login'
-                font_size: 18
-                halign: 'left'
-                text_size: root.width-20, 20
+                text: 'Username:'
+                text_size: self.size
+                valign: 'center'
+                font_size: 60
 
             TextInput:
                 id: login
-                multiline:False
-                font_size: 28
+                multiline: False
+                font_size: root.height / 15
+                cursor_color: 0, 0, 0, 1
 
         BoxLayout:
             orientation: 'vertical'
+            padding: 300, 50
+
             Label:
-                text: 'Password'
-                halign: 'left'
-                font_size: 18
-                text_size: root.width-20, 20
+                text: 'Password:'
+                text_size: self.size
+                valign: 'center'
+                font_size: 60
 
             TextInput:
                 id: password
-                multiline:False
-                password:True
-                font_size: 28
+                multiline: False
+                password: True
+                font_size: root.height / 15
+                cursor_color: 0, 0, 0, 1
+                cursor_col:
 
-        Button:
-            text: 'Log in'
-            font_size: 24
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+            Button:
+                text: 'Log In'
+                font_size: 60
+                size_hint: None, None
+                size: 400, 200
 
-            on_press: root.do_login(login.text, password.text)
+                on_press: root.do_login(login.text, password.text)
