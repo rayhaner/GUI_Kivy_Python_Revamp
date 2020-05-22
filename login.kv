@@ -1,13 +1,8 @@
-#On Pycharm’s main menu, click File-> Import settings
-#Select this file, then it will come with a dialog with filetypes ticked. Just click ok or whatever and then its there.
-#https://github.com/Zen-CODE/kivybits/blob/master/IDE/PyCharm_kv_completion.jar
-#https://www.jetbrains.com/help/pycharm/creating-and-registering-file-types.html
-
 #:include incorrect.kv
+#:include gallery.kv
 
 <Login>:
     BoxLayout
-        id: login_layout
         orientation: 'vertical'
 
         Label:
@@ -17,6 +12,7 @@
             font_size: 80
             size_hint_y: None
             height: '100dp'
+            color: 0, 0, 0, 1
 
         BoxLayout:
             orientation: 'vertical'
@@ -27,6 +23,7 @@
                 text_size: self.size
                 valign: 'center'
                 font_size: 60
+                color: 0, 0, 0, 1
 
             TextInput:
                 id: login
@@ -43,6 +40,7 @@
                 text_size: self.size
                 valign: 'center'
                 font_size: 60
+                color: 0, 0, 0, 1
 
             TextInput:
                 id: password
@@ -50,7 +48,6 @@
                 password: True
                 font_size: root.height / 15
                 cursor_color: 0, 0, 0, 1
-                cursor_col:
 
         AnchorLayout:
             anchor_x: 'center'
