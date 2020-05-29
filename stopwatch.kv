@@ -1,0 +1,101 @@
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDIcon kivymd.uix.label.MDIcon
+#:import MDRoundFlatIconButton kivymd.uix.button.MDRoundFlatIconButton
+#:import MDFillRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
+
+#:include gallery.kv
+
+<Stopwatch>:
+    Screen:
+        BoxLayout:
+            orientation: 'vertical'
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 0.2
+                padding: 0, 50, 0, 20
+                canvas.before:
+                    Color:
+                        rgba: 255, 255, 0, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                MDIcon:
+                    text: 'Stopwatch'
+                    icon: 'alarm'
+                    halign: 'center'
+                    font_size: 150
+
+                MDLabel:
+                    text: 'Stopwatch'
+                    halign: 'center'
+                    font_size: 70
+
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, 0.3
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 2
+                        rectangle: self.x+300, self.y-10, self.width-600, self.height-20
+
+                Widget:
+                    size_hint_x: 1
+
+                # Button Column
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    Widget:
+
+                    MDRoundFlatIconButton:
+                        text: 'START'
+                        icon: 'play'
+                        on_press: root.start()
+                        width: dp(100)
+
+                    Widget:
+                        size_hint_y: 0.3
+
+                    MDRoundFlatIconButton:
+                        text: 'STOP'
+                        icon: 'stop'
+                        on_press: root.stop()
+                        width: dp(100)
+
+                    Widget:
+                        size_hint_y: 0.3
+
+                    MDRoundFlatIconButton:
+                        text: 'RESET'
+                        icon: 'reload'
+                        on_press: root.reset()
+                        width: dp(100)
+
+                    Widget:
+
+                # Stopwatch Display
+                MDLabel:
+                    text: str(root.time)
+                    font_size: '30dp'
+                    halign: 'center'
+
+                Widget:
+                    size_hint_x: 1
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                size_hint: 1, 0.2
+
+                MDRectangleFlatButton:
+                    text: 'Go Back to Gallery'
+                    font_size: '15sp'
+                    on_press: root.back()
+
+
+

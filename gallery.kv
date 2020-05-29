@@ -1,22 +1,14 @@
 #:import MDCard kivymd.uix.card.MDCard
 #:import MDRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
+#:import MDFillRoundFlatButton kivymd.uix.button.MDFillRoundFlatButton
 
-<Middle@AnchorLayout>:
-    anchor_x: 'center'
-    anchor_y: 'center'
-
-<MenuButton@MDFillRoundFlatButton>:
-    font_size: '10sp'
-    size_hint_x: 1
-    text_color: 1, 1, 1, 1
-
+#:include stopwatch.kv
 <CarCard@MDCard>:
     orientation: 'vertical'
     size_hint_x: None
     width: '300sp'
-    source: ''
-    md_bg_color: 0, 0, 0, 1
     text: 'Car'
+    source: ''
 
     Label:
         text: root.text
@@ -24,6 +16,7 @@
         font_size: '25sp'
         size_hint_y: 0.7
         text_color: 0, 0, 0, 1
+
     Image:
         source: root.source
         size_hint: 1, None
@@ -36,17 +29,21 @@
     text: 'More info'
     bold: True
 
+<MenuButton@MDFillRoundFlatButton>:
+    font_size: '10sp'
+    size_hint_x: 1
+    text_color: 1, 1, 1, 1
+    md_bg_color: 1, 0.5, 0, 1
+
 <Gallery>:
     Screen:
         BoxLayout:
-            background_color: 0, 0, 0, 1
             orientation: 'vertical'
 
             BoxLayout:
                 orientation: 'horizontal'
-                height: 100
                 size_hint: 1, 0.15
-                padding: '20sp'
+                padding: '15sp'
                 canvas.before:
                     Color:
                         rgba: 0, 0, 0, 1
@@ -56,14 +53,13 @@
 
                 MenuButton:
                     text: 'Speed Calculator'
-                    md_bg_color: 1, 0.5, 0, 1
 
                 Widget:
                     size_hint_x: 0.3
 
                 MenuButton:
                     text: 'Stopwatch'
-                    md_bg_color: 1, 0.5, 0, 1
+                    on_press: root.open_stopwatch()
 
                 Widget:
                     size_hint_x: 0.3
@@ -98,6 +94,7 @@
                     Widget:
                         size_hint_y: None
                         height: '10sp'
+
                     GridLayout:
                         rows: 2
                         cols: 2
@@ -107,41 +104,57 @@
                         row_force_default: True
                         spacing: 0, 50
 
-                        Middle:
+                        AnchorLayout:
+                            anchor_x: 'center'
+                            anchor_y: 'center'
                             CarCard:
                                 source: 'assets/porsche.jpg'
                                 text: 'Porsche 911'
                                 md_bg_color: 0, 0, 1, 1
-                                Middle:
+                                AnchorLayout:
+                                    anchor_x: 'center'
+                                    anchor_y: 'center'
                                     InfoButton:
-                                        on_press: root.get_info('porsche')
+                                        # Adding the method later
 
-                        Middle:
+                        AnchorLayout:
+                            anchor_x: 'center'
+                            anchor_y: 'center'
                             CarCard:
                                 source: 'assets/lotus.jpg'
                                 text: 'Lotus Evora'
                                 md_bg_color: 1, 0, 0, 1
-                                Middle:
+                                AnchorLayout:
+                                    anchor_x: 'center'
+                                    anchor_y: 'center'
                                     InfoButton:
-                                        on_press: root.get_info('lotus')
+                                        # Adding the method later
 
-                        Middle:
+                        AnchorLayout:
+                            anchor_x: 'center'
+                            anchor_y: 'center'
                             CarCard:
                                 source: 'assets/chevrolet.jpg'
                                 text: 'Chevrolet Corvette'
                                 md_bg_color: 1, 0, 1, 1
-                                Middle:
+                                AnchorLayout:
+                                    anchor_x: 'center'
+                                    anchor_y: 'center'
                                     InfoButton:
-                                        on_press: root.get_info('chevrolet')
+                                        # Adding the method later
 
-                        Middle:
+                        AnchorLayout:
+                            anchor_x: 'center'
+                            anchor_y: 'center'
                             CarCard:
                                 source: 'assets/alfaromeo.jpg'
                                 text: 'Alfa Romeo 4C'
                                 md_bg_color: 0, 0.5, 0, 1
-                                Middle:
+                                AnchorLayout:
+                                    anchor_x: 'center'
+                                    anchor_y: 'center'
                                     InfoButton:
-                                        on_press: root.get_info('alfaromeo')
+                                        # Adding the method later
 
                     Widget:
                         size_hint_y: None

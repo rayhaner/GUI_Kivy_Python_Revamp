@@ -9,3 +9,7 @@ class Gallery(Screen):
         self.manager.transition = SlideTransition(direction="right")
         self.manager.current = 'login'
         self.manager.get_screen('login').reset_form()
+
+    def open_stopwatch(self):
+        self.manager.transition = SlideTransition(direction="left")
+        self.manager.current = 'stopwatch'
