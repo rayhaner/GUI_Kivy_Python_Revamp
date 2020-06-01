@@ -1,7 +1,7 @@
 # GUI_Kivy_Python_Revamp
 GalleryApp built with Kivy and KivyMD GUI libraries.
 
-To use the executable (OSX ONLY): unzip GalleryApp.zip file and run the GalleryApp executable while inside the file.
+To use the executable (OSX ONLY): unzip dist/GalleryApp.zip file and run the GalleryApp executable while inside the file.
 
 GalleryApp has multiple functionalities:
 1) Login details verification for Username: Roboto, Password: 123
