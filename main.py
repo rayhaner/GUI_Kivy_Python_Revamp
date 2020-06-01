@@ -6,6 +6,7 @@ from calculator import Calculator
 from incorrect import Incorrect
 from gallery import Gallery
 from stopwatch import Stopwatch
+from info import Info
 
 
 class Login(Screen):
@@ -39,6 +40,10 @@ class LoginApp(MDApp):
         manager.add_widget(Gallery(name='gallery'))
         manager.add_widget(Stopwatch(name='stopwatch'))
         manager.add_widget(Calculator(name='calculator'))
+        manager.add_widget(Info(name='porsche'))
+        manager.add_widget(Info(name='lotus'))
+        manager.add_widget(Info(name='chevrolet'))
+        manager.add_widget(Info(name='alfaromeo'))
 
         return manager
 

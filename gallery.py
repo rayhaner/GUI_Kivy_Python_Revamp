@@ -2,8 +2,9 @@ from kivy.uix.screenmanager import Screen, SlideTransition
 
 
 class Gallery(Screen):
-    # def get_info(self, id):
-    #     print(id)
+    def get_info(self, model):
+        self.manager.transition = SlideTransition(direction="left")
+        self.manager.current = model
 
     def disconnect(self):
         self.manager.transition = SlideTransition(direction="right")

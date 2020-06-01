@@ -4,6 +4,7 @@
 
 #:include calculator.kv
 #:include stopwatch.kv
+#:include info.kv
 
 <CarCard@MDCard>:
     orientation: 'vertical'
@@ -118,7 +119,7 @@
                                     anchor_x: 'center'
                                     anchor_y: 'center'
                                     InfoButton:
-                                        # Adding the method later
+                                        on_press: root.get_info('porsche')
 
                         AnchorLayout:
                             anchor_x: 'center'
@@ -131,7 +132,7 @@
                                     anchor_x: 'center'
                                     anchor_y: 'center'
                                     InfoButton:
-                                        # Adding the method later
+                                        on_press: root.get_info('lotus')
 
                         AnchorLayout:
                             anchor_x: 'center'
@@ -144,7 +145,7 @@
                                     anchor_x: 'center'
                                     anchor_y: 'center'
                                     InfoButton:
-                                        # Adding the method later
+                                        on_press: root.get_info('chevrolet')
 
                         AnchorLayout:
                             anchor_x: 'center'
@@ -157,7 +158,7 @@
                                     anchor_x: 'center'
                                     anchor_y: 'center'
                                     InfoButton:
-                                        # Adding the method later
+                                        on_press: root.get_info('alfaromeo')
 
                     Widget:
                         size_hint_y: None

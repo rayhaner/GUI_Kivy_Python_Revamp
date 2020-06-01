@@ -1,6 +1,5 @@
 from kivy.properties import NumericProperty
-from kivy.uix.screenmanager import Screen, ScreenManager, SlideTransition
-from kivymd.app import MDApp
+from kivy.uix.screenmanager import Screen, SlideTransition
 from kivymd.uix.textfield import MDTextFieldRect
 
 
@@ -45,3 +44,5 @@ class ConvertTextField(MDTextFieldRect):
         if self.readonly and text[1] == "backspace":
             self.readonly = False
             self.do_backspace()
+
+
