@@ -1,0 +1,114 @@
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDTextFieldRect kivymd.uix.textfield.MDTextFieldRect
+#:import MDFillRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
+
+<ConvertTextField@MDTextFieldRect>:
+    multiline: False
+    size_hint: None, None
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    width: '160sp'
+    height: '50sp'
+    font_size: '40sp'
+    input_filter: 'float'
+
+<Calculator>:
+    Screen:
+        BoxLayout:
+            orientation: 'vertical'
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 0.2
+                padding: 0, 50, 0, 20
+                canvas.before:
+                    Color:
+                        rgba: 255, 255, 0, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                MDIcon:
+                    icon: 'calculator-variant'
+                    halign: 'center'
+                    font_size: 150
+
+                MDLabel:
+                    text: 'Speed Calculator'
+                    halign: 'center'
+                    font_size: 70
+
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, 0.3
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 2
+                        rectangle: self.x, self.y, self.width, self.height
+
+                Widget:
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    BoxLayout:
+                        orientation: 'horizontal'
+
+                        ConvertTextField:
+                            text: str(root.kmh_value)
+                            on_text_validate: root.text_change(self.text, 'kmh');
+                            on_text: self.readonly = True if len(self.text.strip()) == 5 else False
+
+                        Widget:
+                            size_hint_x: 0.1
+
+                        MDLabel:
+                            text: 'km/h'
+                            font_size: '40sp'
+
+                    BoxLayout:
+                        orientation: 'horizontal'
+
+                        ConvertTextField:
+                            text: str(root.ms_value)
+                            on_text_validate: root.text_change(self.text, 'ms')
+                            on_text: self.readonly = True if len(self.text.strip()) == 5 else False
+
+                        Widget:
+                            size_hint_x: 0.1
+
+                        MDLabel:
+                            text: 'm/s'
+                            font_size: '40sp'
+
+                    BoxLayout:
+                        orientation: 'horizontal'
+
+                        ConvertTextField:
+                            text: str(root.mph_value)
+                            on_text_validate: root.text_change(self.text, 'mph')
+                            on_text: self.readonly = True if len(self.text.strip()) == 5 else False
+
+                        Widget:
+                            size_hint_x: 0.1
+
+                        MDLabel:
+                            text: 'mph'
+                            font_size: '40sp'
+
+                Widget:
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                size_hint: 1, 0.2
+
+                MDRectangleFlatButton:
+                    text: 'Go Back to Gallery'
+                    font_size: '15sp'
+                    on_press: root.back()
+
+
+

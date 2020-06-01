@@ -3,8 +3,6 @@
 #:import MDRoundFlatIconButton kivymd.uix.button.MDRoundFlatIconButton
 #:import MDFillRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
 
-#:include gallery.kv
-
 <Stopwatch>:
     Screen:
         BoxLayout:
@@ -22,7 +20,6 @@
                         pos: self.pos
 
                 MDIcon:
-                    text: 'Stopwatch'
                     icon: 'alarm'
                     halign: 'center'
                     font_size: 150
@@ -56,7 +53,7 @@
                         text: 'START'
                         icon: 'play'
                         on_press: root.start()
-                        width: dp(100)
+                        width: sp(100)
 
                     Widget:
                         size_hint_y: 0.3
@@ -65,7 +62,7 @@
                         text: 'STOP'
                         icon: 'stop'
                         on_press: root.stop()
-                        width: dp(100)
+                        width: sp(100)
 
                     Widget:
                         size_hint_y: 0.3
@@ -74,13 +71,13 @@
                         text: 'RESET'
                         icon: 'reload'
                         on_press: root.reset()
-                        width: dp(100)
+                        width: sp(100)
 
                     Widget:
 
                 # Stopwatch Display
                 MDLabel:
-                    text: str(root.time)
+                    text: root.time
                     font_size: '30dp'
                     halign: 'center'
 

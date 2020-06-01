@@ -1,7 +1,8 @@
 from kivymd.app import MDApp
-from kivy.properties import StringProperty, NumericProperty
+from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 
+from calculator import Calculator
 from incorrect import Incorrect
 from gallery import Gallery
 from stopwatch import Stopwatch
@@ -19,7 +20,7 @@ class Login(Screen):
         if app.username == "Roboto" and app.password == "123":
             self.manager.current = 'gallery'
         else:
-            self.manager.current = 'gallery'
+            self.manager.current = 'incorrect'
 
     def reset_form(self):
         self.ids['login'].text = ""
@@ -29,7 +30,6 @@ class Login(Screen):
 class LoginApp(MDApp):
     username = StringProperty(None)
     password = StringProperty(None)
-    time = NumericProperty(0)
 
     def build(self):
         manager = ScreenManager()
@@ -38,6 +38,7 @@ class LoginApp(MDApp):
         manager.add_widget(Incorrect(name='incorrect'))
         manager.add_widget(Gallery(name='gallery'))
         manager.add_widget(Stopwatch(name='stopwatch'))
+        manager.add_widget(Calculator(name='calculator'))
 
         return manager
 

@@ -2,7 +2,9 @@
 #:import MDRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
 #:import MDFillRoundFlatButton kivymd.uix.button.MDFillRoundFlatButton
 
+#:include calculator.kv
 #:include stopwatch.kv
+
 <CarCard@MDCard>:
     orientation: 'vertical'
     size_hint_x: None
@@ -53,6 +55,7 @@
 
                 MenuButton:
                     text: 'Speed Calculator'
+                    on_press: root.open_calculator()
 
                 Widget:
                     size_hint_x: 0.3

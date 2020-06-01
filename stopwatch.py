@@ -1,7 +1,6 @@
 from kivy.clock import Clock
 from kivy.properties import NumericProperty, StringProperty
-from kivy.uix.screenmanager import Screen, SlideTransition, ScreenManager
-from kivymd.app import MDApp
+from kivy.uix.screenmanager import Screen, SlideTransition
 
 
 class Stopwatch(Screen):
@@ -25,8 +24,9 @@ class Stopwatch(Screen):
 
     # Button Methods
     def start(self):
-        self.clock_event = Clock.schedule_interval(self.run_clock, 0.01)
-        self.running = True
+        if not self.running:
+            self.clock_event = Clock.schedule_interval(self.run_clock, 0.01)
+            self.running = True
 
     def stop(self):
         if self.running:
