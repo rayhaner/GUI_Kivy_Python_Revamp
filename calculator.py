@@ -27,9 +27,11 @@ class Calculator(Screen):
         if label_type == 'kmh':
             self.ms_value = convert(1/3.6)
             self.mph_value = convert(1/1.609)
+
         elif label_type == 'ms':
             self.kmh_value = convert(3.6)
             self.mph_value = convert(2.237)
+
         elif label_type == 'mph':
             self.ms_value = convert(1/2.237)
             self.kmh_value = convert(1.609)

@@ -2,11 +2,12 @@ from kivymd.app import MDApp
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 
-from calculator import Calculator
+
 from incorrect import Incorrect
 from gallery import Gallery
-from stopwatch import Stopwatch
 from info import Info
+from calculator import Calculator
+from stopwatch import Stopwatch
 
 
 class Login(Screen):
@@ -38,12 +39,14 @@ class LoginApp(MDApp):
         manager.add_widget(Login(name='login'))
         manager.add_widget(Incorrect(name='incorrect'))
         manager.add_widget(Gallery(name='gallery'))
-        manager.add_widget(Stopwatch(name='stopwatch'))
-        manager.add_widget(Calculator(name='calculator'))
+
         manager.add_widget(Info(name='porsche'))
         manager.add_widget(Info(name='lotus'))
         manager.add_widget(Info(name='chevrolet'))
         manager.add_widget(Info(name='alfaromeo'))
+
+        manager.add_widget(Stopwatch(name='stopwatch'))
+        manager.add_widget(Calculator(name='calculator'))
 
         return manager
 

@@ -10,6 +10,7 @@
     height: '50sp'
     font_size: '40sp'
     input_filter: 'float'
+    on_text: self.readonly = True if len(self.text.strip()) == 5 else False
 
 <Calculator>:
     Screen:
@@ -53,13 +54,13 @@
                 BoxLayout:
                     orientation: 'vertical'
 
+                    # Text Field Code Here
                     BoxLayout:
                         orientation: 'horizontal'
 
                         ConvertTextField:
                             text: str(root.kmh_value)
-                            on_text_validate: root.text_change(self.text, 'kmh');
-                            on_text: self.readonly = True if len(self.text.strip()) == 5 else False
+                            on_text_validate: root.text_change(self.text, 'kmh')
 
                         Widget:
                             size_hint_x: 0.1
@@ -74,7 +75,6 @@
                         ConvertTextField:
                             text: str(root.ms_value)
                             on_text_validate: root.text_change(self.text, 'ms')
-                            on_text: self.readonly = True if len(self.text.strip()) == 5 else False
 
                         Widget:
                             size_hint_x: 0.1
@@ -89,7 +89,6 @@
                         ConvertTextField:
                             text: str(root.mph_value)
                             on_text_validate: root.text_change(self.text, 'mph')
-                            on_text: self.readonly = True if len(self.text.strip()) == 5 else False
 
                         Widget:
                             size_hint_x: 0.1
